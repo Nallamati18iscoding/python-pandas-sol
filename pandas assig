@@ -1,14 +1,22 @@
 Q1. How do you load a CSV file into a Pandas DataFrame?
+ans ) df = pd.read_csv("paste the link of file")
+
+      df
 
 Q2. How do you check the data type of a column in a Pandas DataFrame?
+ans ) df.dtypes
 
 Q3. How do you select rows from a Pandas DataFrame based on a condition?
+ans )df.tail,df.head 
 
 Q4. How do you rename columns in a Pandas DataFrame?
 
 Q5. How do you drop columns in a Pandas DataFrame?
+ans)df.drop('new_col', axis=1)
+     
 
 Q6. How do you find the unique values in a column of a Pandas DataFrame?
+ans)df['Pclass'].unique()
 
 Q7. How do you find the number of missing values in each column of a Pandas DataFrame?
 
