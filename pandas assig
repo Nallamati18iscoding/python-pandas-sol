@@ -24,21 +24,81 @@ ans) to find the missing values
 df.isnull()
 
 Q8. How do you fill missing values in a Pandas DataFrame with a specific value?
-ans)
+ans) The fillna() function iterates through your dataset and fills all empty rows with a specified value. This could be the mean, median, modal, or any other value.
 
 Q9. How do you concatenate two Pandas DataFrames?
+ans) # concatenating df1 and df2 along rows
+vertical_concat = pd.concat([df1, df2], axis=0)
+
+# concatenating df3 and df4 along columns
+horizontal_concat = pd.concat([df3, df4], axis=1)
+
+display(vertical_concat, horizontal_concat)
+
 
 Q10. How do you merge two Pandas DataFrames on a specific column?
+ans) # importing modules
+import pandas as pd
+
+# creating a dataframe
+df1 = pd.DataFrame({'Name':['Raju', 'Rani', 'Geeta', 'Sita', 'Sohit'],
+					'Marks':[80, 90, 75, 88, 59]})
+
+# creating another dataframe with different data
+df2 = pd.DataFrame({'Name':['Raju', 'Divya', 'Geeta', 'Sita'],
+					'Grade':['A', 'A', 'B', 'A'],
+					'Rank':[3, 1, 4, 2 ],
+					'Gender':['Male', 'Female', 'Female', 'Female']})
+# display df1
+display(df1)
+
+# display df2
+display(df2)
+
 
 Q11. How do you group data in a Pandas DataFrame by a specific column and apply an aggregation function?
 
 Q12. How do you pivot a Pandas DataFrame?
 
 Q13. How do you change the data type of a column in a Pandas DataFrame?
+ans)# changing the dataframe
+# data types to string
+df = df.astype(str)
 
-Q14. How do you sort a Pandas DataFrame by a specific column?
+# show the data types
+# of dataframe
+df.dtypes
+
+
+Q14.# changing the dataframe
+# data types to string
+df = df.astype(str)
+
+# show the data types
+# of dataframe
+df.dtypes
+
 
 Q15. How do you create a copy of a Pandas DataFrame?
+ANS) import pandas as pd
+
+#Create Series
+s = pd.Series([3,4,5],['earth','mars','jupiter'])
+k = pd.Series([1,2,3],['earth','mars','jupiter'])
+
+#Create DataFrame df from two series
+df = pd.DataFrame({'mass':s,'diameter':k})
+
+df
+--->#Assign df to variable_copy
+variable_copy = df
+
+print(variable_copy)
+#Update the value of mass of earth in original dataframe
+df['mass']['earth']=8
+
+print(variable_copy)
+
 
 Q16. How do you filter rows of a Pandas DataFrame by multiple conditions?
 
@@ -52,12 +112,36 @@ Q20. How do you select specific columns in a DataFrame using their labels?
 
 Q21. How do you select specific rows in a DataFrame using their indexes?
 
-Q22. How do you sort a DataFrame by a specific column?
+Q22import pandas as pd
+
+data = {
+	"A": ["TeamA", "TeamB", "TeamB", "TeamC", "TeamA"],
+	"B": [50, 40, 40, 30, 50],
+	"C": [True, False, False, False, True]
+}
+
+df = pd.DataFrame(data)
+
+display(df.drop_duplicates())
+
+
 
 Q23. How do you create a new column in a DataFrame based on the values of another column?
 ans)   df['new_col'] = df['Survived'] + df['Pclass']
 
 Q24. How do you remove duplicates from a DataFrame?
+ans ) import pandas as pd
+
+data = {
+	"A": ["TeamA", "TeamB", "TeamB", "TeamC", "TeamA"],
+	"B": [50, 40, 40, 30, 50],
+	"C": [True, False, False, False, True]
+}
+
+df = pd.DataFrame(data)
+
+display(df.drop_duplicates())
+
 
 Q25. What is the difference between .loc and .iloc in Pandas?
 ans) .loc is user index but iloc is the system generated index values.
